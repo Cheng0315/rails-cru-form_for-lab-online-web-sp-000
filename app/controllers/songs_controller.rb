@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
 
   def new
-    @genre = Song.new
+    @song = Song.new
   end
 
   def show
