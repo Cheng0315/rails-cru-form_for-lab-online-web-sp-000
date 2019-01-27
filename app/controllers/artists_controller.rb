@@ -13,14 +13,14 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(post_params(:first_name, :last_name))
+    @artist = Artist.new(post_params(:name, :bio))
     @artist.save
     redirect_to artist_path(@artist)
   end
 
   def update
     @artist = Artist.find(params[:id])
-    @artist.update(post_params(:first_name, :last_name))
+    @artist.update(post_params(:name, :bio))
     redirect_to artist_path(@artist)
   end
 
