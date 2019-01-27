@@ -9,19 +9,19 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @artist = Student.find(params[:id])
+    @artist = Artist.find(params[:id])
   end
 
   def create
-    @artist = Student.new(post_params(:first_name, :last_name))
+    @artist = Artist.new(post_params(:first_name, :last_name))
     @artist.save
-    redirect_to student_path(@artist)
+    redirect_to artist_path(@artist)
   end
 
   def update
-    @artist = Student.find(params[:id])
+    @artist = Artist.find(params[:id])
     @artist.update(post_params(:first_name, :last_name))
-    redirect_to student_path(@artist)
+    redirect_to artist_path(@artist)
   end
 
   private
